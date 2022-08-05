@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GlobalColorPicker (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "GlobalColorPicker (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

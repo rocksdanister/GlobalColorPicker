@@ -1,0 +1,39 @@
+﻿<winex:WindowEx
+    x:Class="GlobalColorPicker.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:GlobalColorPicker"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:winex="using:WinUIEx"
+    Width="175"
+    Height="65"
+    IsTitleBarVisible="False"
+    mc:Ignorable="d">
+
+    <winex:WindowEx.Backdrop>
+        <winex:AcrylicSystemBackdrop DarkTintColor="Transparent" LightTintColor="Transparent" />
+    </winex:WindowEx.Backdrop>
+    <Grid>
+        <StackPanel
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <Border
+                x:Name="cBorder"
+                Width="35"
+                Height="35"
+                Background="Green"
+                BorderBrush="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="5" />
+            <TextBlock
+                x:Name="cText"
+                Margin="5,0,0,0"
+                VerticalAlignment="Center">
+                RGB(255,255,255)
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</winex:WindowEx>
