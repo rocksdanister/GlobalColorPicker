@@ -6,7 +6,7 @@
     xmlns:local="using:GlobalColorPicker"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:winex="using:WinUIEx"
-    Width="175"
+    Width="182"
     Height="65"
     IsTitleBarVisible="False"
     mc:Ignorable="d">
@@ -31,8 +31,9 @@
             <TextBlock
                 x:Name="cText"
                 Margin="5,0,0,0"
-                VerticalAlignment="Center">
-                RGB(255,255,255)
+                VerticalAlignment="Center"
+                FontWeight="Bold">
+                rgb(255, 255, 255)
             </TextBlock>
         </StackPanel>
     </Grid>

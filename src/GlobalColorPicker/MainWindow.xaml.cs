@@ -93,7 +93,7 @@ namespace GlobalColorPicker
                               color.G,
                               color.B
                             ));
-            cText.Text = $"RGB({color.R},{color.G},{color.B})";
+            cText.Text = $"rgb({color.R}, {color.G}, {color.B})";
         }
 
         #region helpers
