@@ -73,10 +73,19 @@ namespace GlobalColorPicker
                     //fail
                 }
 
-                //Bring back win11 rounded corner
-                var attribute = NativeMethods.DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
-                var preference = NativeMethods.DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
-                NativeMethods.DwmSetWindowAttribute(this.GetWindowHandle(), attribute, ref preference, sizeof(uint));
+                if (IsWindows11_OrGreater)
+                {
+                    //Bring back win11 rounded corner
+                    var attribute = NativeMethods.DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
+                    var preference = NativeMethods.DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
+                    NativeMethods.DwmSetWindowAttribute(this.GetWindowHandle(), attribute, ref preference, sizeof(uint));
+
+                    if (NativeMethods.GetCursorPos(out NativeMethods.POINT P))
+                    {
+                        //Force redraw and pos
+                        NativeMethods.SetWindowPos(this.GetWindowHandle(), -1, P.X + 25, P.Y + 25, 1, 1, (int)NativeMethods.SetWindowPosFlags.SWP_SHOWWINDOW);
+                    }
+                }
             };
         }
 
@@ -112,6 +121,8 @@ namespace GlobalColorPicker
                 NativeMethods.ReleaseDC(desk, dc);
             }
         }
+
+        public static bool IsWindows11_OrGreater => Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Build >= 22000;
 
         #endregion //helpers
     }
