@@ -10,11 +10,11 @@
     Height="65"
     IsTitleBarVisible="False"
     mc:Ignorable="d">
-
     <winex:WindowEx.Backdrop>
-        <winex:AcrylicSystemBackdrop DarkTintColor="Transparent" LightTintColor="Transparent" />
+        <winex:AcrylicSystemBackdrop />
     </winex:WindowEx.Backdrop>
-    <Grid>
+
+    <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
         <StackPanel
             Margin="10"
             HorizontalAlignment="Left"
@@ -25,7 +25,7 @@
                 Width="35"
                 Height="35"
                 Background="Green"
-                BorderBrush="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
                 BorderThickness="1"
                 CornerRadius="5" />
             <TextBlock
